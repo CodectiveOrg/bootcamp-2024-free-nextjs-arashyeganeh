@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 
 import HeaderComponent from "@/components/header/header.component";
+import FooterComponent from "@/components/footer/footer.component";
 
 import "./globals.css";
 
@@ -25,6 +26,10 @@ export default function RootLayout({
       <body className={vazirmatn.className}>
         <HeaderComponent />
         <main>{children}</main>
+        <p className="tagline">
+          سامانه جامع ویزیت وقت ملاقات با پزشکان در سراسر کشور
+        </p>
+        <FooterComponent />
       </body>
     </html>
   );
