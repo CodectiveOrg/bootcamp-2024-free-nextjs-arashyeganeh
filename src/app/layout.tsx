@@ -5,6 +5,7 @@ import HeaderComponent from "@/components/header/header.component";
 import FooterComponent from "@/components/footer/footer.component";
 
 import "./globals.css";
+import { ReactElement } from "react";
 
 const vazirmatn = Vazirmatn({
   subsets: ["latin", "arabic"],
@@ -12,18 +13,18 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "دکتر من",
-  description: "پلتفرم جامع جستجوی دکتر  و رزرو آنلاین",
+  title: "نوبت‌دهی آنلاین دکتر",
+  description: "رزور وقت دکتر به صورت آنلاین",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): ReactElement {
   return (
-    <html lang="fa" dir="rtl">
-      <body className={vazirmatn.className}>
+    <html lang="fa" dir="rtl" className={vazirmatn.className}>
+      <body>
         <HeaderComponent />
         <main>{children}</main>
         <p className="tagline">
