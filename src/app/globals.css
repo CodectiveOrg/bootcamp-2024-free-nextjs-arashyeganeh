@@ -33,7 +33,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-
   margin: 0;
   padding: 0;
 }
@@ -44,16 +43,16 @@ html {
 
 input,
 label,
-select,
 textarea,
+select,
 button,
 fieldset,
 legend,
-datalist,
 output,
 option,
-optgroup {
-  font: inherit;
+optgroup,
+datalist {
+  font-family: inherit;
 }
 
 ul {
@@ -62,11 +61,14 @@ ul {
 
 a {
   color: inherit;
-
   text-decoration: none;
 }
 
 body {
   background-color: var(--color-default-background);
   color: var(--color-default-foreground);
+
+  > * {
+    padding-inline: var(--full-width-padding-inline);
+  }
 }
