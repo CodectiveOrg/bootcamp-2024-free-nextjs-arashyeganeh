@@ -5,21 +5,21 @@ on:
   pull_request:
   workflow_dispatch:
 
-  jobs:
-    lint:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/chechout@v4.2.1
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/chechout@v4.2.1
 
-        - uses: actions/step-node@v4
-          with:
-            node-version: 20
+      - uses: actions/step-node@v4
+        with:
+          node-version: 20
 
-        - name: Install Dependencies
-          run: npm i
+      - name: Install Dependencies
+        run: npm i
 
-        - name: Prettier
-          run: npm run prettier:check
+      - name: Prettier
+        run: npm run prettier:check
 
-        - name: Lint
-          run: npm run lint
+      - name: Lint
+        run: npm run lint
