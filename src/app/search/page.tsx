@@ -3,33 +3,40 @@ import { ReactElement } from "react";
 import FilterComponent from "@/app/search/components/filter/filter.component";
 import ListComponent from "@/app/search/components/list/list.component";
 
-import FilterProvider from "@/app/search/providers/filters/filters.provider";
+import FiltersProvider from "@/app/search/providers/filters/filters.provider";
+import ItemsProvider from "@/app/search/providers/items/items.provider";
 
 import styles from "./page.module.css";
 
+const items = Array(100)
+  .fill(null)
+  .map((_, i) => ({ value: i + 1 }));
+
 export default function Page(): ReactElement {
   return (
-    <FilterProvider>
-      <div className={styles.page}>
-        <div className={styles.filters}>
-          <FilterComponent
-            title="زوج یا فرد"
-            options={[
-              { key: "even", label: "زوج" },
-              { key: "odd", label: "فرد" },
-            ]}
-          />
-          <FilterComponent
-            title="زوج یا فرد"
-            options={[
-              { key: "three", label: "بخش پذیر بر 3" },
-              { key: "five", label: "بخش پذیر بر 5" },
-              { key: "seven", label: "بخش پذیر بر 7" },
-            ]}
-          />
+    <FiltersProvider>
+      <ItemsProvider items={items}>
+        <div className={styles.page}>
+          <div className={styles.filters}>
+            <FilterComponent
+              title="زوج یا فرد"
+              options={[
+                { key: "even", label: "زوج" },
+                { key: "odd", label: "فرد" },
+              ]}
+            />
+            <FilterComponent
+              title="زوج یا فرد"
+              options={[
+                { key: "three", label: "بخش پذیر بر 3" },
+                { key: "five", label: "بخش پذیر بر 5" },
+                { key: "seven", label: "بخش پذیر بر 7" },
+              ]}
+            />
+          </div>
+          <ListComponent></ListComponent>
         </div>
-        <ListComponent></ListComponent>
-      </div>
-    </FilterProvider>
+      </ItemsProvider>
+    </FiltersProvider>
   );
 }
