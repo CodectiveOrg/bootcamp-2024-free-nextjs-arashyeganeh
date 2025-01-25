@@ -23,6 +23,10 @@
     }
   }
 
+  .visuals {
+    grid-area: visuals;
+  }
+
   .actions {
     grid-area: actions;
     grid-column: 1 / -1;
