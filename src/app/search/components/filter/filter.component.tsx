@@ -2,8 +2,6 @@
 
 import { ReactElement, useContext } from "react";
 
-import clsx from "clsx";
-
 import CardComponent from "@/components/card/card.component";
 import FilterButtonComponent from "@/components/filter-button/filter-button.component";
 
