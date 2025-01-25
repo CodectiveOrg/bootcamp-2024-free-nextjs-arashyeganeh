@@ -1,13 +1,14 @@
+import { ReactElement } from "react";
+
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 
 import HeaderComponent from "@/components/header/header.component";
 import FooterComponent from "@/components/footer/footer.component";
 
-import { ReactElement } from "react";
+import "@/styles/typography.css";
 
 import "./globals.css";
-import "@/styles/typography.css";
 
 const vazirmatn = Vazirmatn({
   subsets: ["latin", "arabic"],
@@ -15,8 +16,8 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "نوبت‌دهی آنلاین دکتر",
-  description: "رزور وقت دکتر به صورت آنلاین",
+  title: "دکتر من",
+  description: "پلتفرم جامع جستجوی دکتر و رزرو نوبت آنلاین",
 };
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
         <HeaderComponent />
         <main>{children}</main>
         <p className="tagline">
-          سامانه جامع ویزیت وقت ملاقات با پزشکان در سراسر کشور
+          نوبت دهی پزشکی، سامانه نوبت دهی اینترنتی بیمارستان و پزشکان
         </p>
         <FooterComponent />
       </body>

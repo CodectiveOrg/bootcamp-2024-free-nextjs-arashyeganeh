@@ -1,26 +1,15 @@
 .not-found {
-  display: flex;
+  display: grid;
+  grid-template-areas: "writings visuals" "search visuals";
+  place-content: center;
+  gap: 1rem;
+
   min-block-size: 100%;
 
-  a {
-    color: var(--color-primary);
-  }
-
-  .container {
-    display: flex;
-    align-items: stretch;
-    gap: 1rem;
-    flex-wrap: wrap;
-
-    margin: 3rem auto;
-
-    .image {
-      display: block;
-      margin: 0 auto;
-    }
+  .writings {
+    grid-area: writings;
 
     .status-code {
-      text-align: center;
       font-size: var(--fz-800);
       font-weight: 300;
 
@@ -34,7 +23,22 @@
     }
 
     p {
-      max-inline-size: 40ch;
+      max-inline-size: 50ch;
     }
+  }
+
+  .visuals {
+    grid-area: visuals;
+
+    min-block-size: 100%;
+    block-size: 0;
+
+    img {
+      block-size: 100%;
+    }
+  }
+
+  .search {
+    grid-area: search;
   }
 }

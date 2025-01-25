@@ -31,7 +31,7 @@ export default function HeaderComponent(): ReactElement {
           </li>
         </ul>
       </nav>
-      <button className={styles.cta}>ورود | ثبت نام</button>
+      <button className={styles.cta}>ورود | ثبت‌نام</button>
     </header>
   );
 }
